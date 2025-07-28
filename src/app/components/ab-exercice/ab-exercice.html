@@ -3,5 +3,7 @@
     @for(serie of series; track series; let i= $index){
         <li>{{i}}: {{serie}}.</li>
         <button (click)="deleteMovie(i)">Remove</button>
+    }@empty {
+        <p>la liste est vide</p>
     }
 </section>
