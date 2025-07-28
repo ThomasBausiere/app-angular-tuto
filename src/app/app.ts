@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AaExercice } from './components/aa-exercice/aa-exercice';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, AaExercice],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
