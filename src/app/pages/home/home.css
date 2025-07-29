@@ -1,0 +1,9 @@
+ @import url("../../../styles.css");
+
+.home{
+    height: 100vh;
+    background: var(--main-bg-color);
+    color:var(--main-solid-color);
+    font-size: large;
+    
+}
