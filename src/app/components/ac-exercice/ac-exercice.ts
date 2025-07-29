@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { OrdertablePipe } from '../../utils/ordertable-pipe';
-
+type Order = "asc" | "dsc"
+ 
 @Component({
   selector: 'app-ac-exercice',
   imports: [OrdertablePipe],
@@ -9,16 +10,14 @@ import { OrdertablePipe } from '../../utils/ordertable-pipe';
 })
 export class AcExercice {
   series:string[] = ["Lost", "Breaking Bad", "Heroes", "Misfit", "Docteur Who", "Monk", "Ghost Whisperers"];
-  public isSorted = true;
+  order : Order = "asc";
+
   deleteMovie(i:number):void{
     this.series.splice(i, 1); 
   }
 
-  sortArray(value: string[]):string[]{    
-      return value.sort();
+  setOrder(order: Order) :void{    
+    this.order = order;
   }
 
-    sortArrayDesc(value: string[]):string[]{    
-      return value.reverse();
-  }
 }

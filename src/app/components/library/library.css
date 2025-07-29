@@ -1,0 +1,9 @@
+ .exo4{
+    height: 100vh;
+    background: var(--main-bg-color);
+    color:var(--main-solid-color);
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,30 @@
+<div class="exo4">
+    <div class="soloitem">
+
+        <h2>Les séries</h2>
+        @for(book  of library   ; track book; let i= $index){
+            <li> titre : {{book.title}}<br/>
+                 auteur: {{book.author}}<br/>
+                 est lu : {{book.isRead | isRead}} <br/>
+                <button (click)="toggleIsRead(book)"> is read ?</button>
+            </li>
+        }@empty {
+            <p>la liste est vide</p>
+        }
+        <h3>Formulaire</h3>
+    <form (ngSubmit)="submitBook()">
+        <div>
+            <label for="title">title</label>
+            <input type="text" name="title" [(ngModel)]="title">
+        </div>
+        <div>
+            <label for="author">author</label>
+            <input type="text" name="author" [(ngModel)]="author">
+        </div>
+       
+        <button>Add Book</button>
+    </form>
+    </div>
+
+    
+</div>
