@@ -6,7 +6,15 @@
     margin:0;
 }
 
-
+.exo{
+    height: 100vh;
+    background: var(--main-bg-color);
+    color:var(--main-solid-color);
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
  .soloitem{
     display: flex;
@@ -16,11 +24,34 @@
     position: absolute;
     width: 50%;
     height: 60%;
-    background-color: var(--sub-bg-color) ;
-    border:var(--non-animed-ui-border-color);
-    
+    background-color: var(--default-element-color) ;
+    border:var(--non-animed-ui-border-color);    
 }
 
+.dualitems{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--default-element-color) ;
+    border:var(--non-animed-ui-border-color);  
+}
+
+button, .buttonclass{
+    background-color: var(--non-animed-ui-border-color) ;
+    border-color: var( --default-animed-ui-border-color);
+    color:var(--low-contrast-text) ;
+    border-radius: 5px;
+    padding: 10px;
+
+}
+
+button:hover, .buttonclass:hover{
+    background-color: var(--hover-element-color) ;
+    border-color: var(--hover-animed-ui-border-color);
+    color:var(--high-contast-text)  ;
+
+}
 .soloitem > h1 {
     font-size: 48px;
     color: var(--main-solid-color)
@@ -45,19 +76,18 @@
 
 
 :root{
-    --main-bg-color:linear-gradient(90deg,rgba(20, 25, 33, 1) 0%, rgba(60, 79, 105, 1) 50%, rgba(0, 0, 0, 1) 100%);                               /*   var(--main-bg-color)                   */
-    --sub-bg-color:#3C4F69;                             /*   var(--sub-bg-color)                    */
-    --default-element-color:#232221;                    /*   var(--default-element-colo)            */
-    --hover-element-color:#2B2A29;                      /*   var(--hover-element-color)             */
-    --selected-element-color:#343230;                   /*   var(--selected-element-color)          */
-    --non-animed-ui-border-color:#3E3C39;               /*   var(--non-animed-ui-border-color)      */
-    --default-animed-ui-border-color:#4E4A47;           /*   var( --default-animed-ui-border-color) */
-    --hover-animed-ui-border-color:#66615D;             /*   var(--hover-animed-ui-border-color)    */
-    --main-solid-color:#D8E8FF;                         /*   var(--main-solid-color)                */
-    --hover-solid-color:#4B4845;                        /*   var(--hover-solid-color)               */
-    --low-contrast-text:#BCB6B2;                        /*   var(--low-contrast-text)               */
-    --high-contast-text:#EDE9E6;                        /*   var(--high-contast-text)               */
-
+    --main-bg-color:#081316;                            /*   var(--main-bg-color)                   */
+    --sub-bg-color:#0F1B1E;                             /*   var(--sub-bg-color)                    */
+    --default-element-color:#042C34;                    /*   var(--default-element-color)            */
+    --hover-element-color:#003945;                      /*   var(--hover-element-color)             */
+    --selected-element-color:#005564;                   /*   var(--selected-element-color)          */
+    --non-animed-ui-border-color:#005564;               /*   var(--non-animed-ui-border-color)      */
+    --default-animed-ui-border-color:#036979;           /*   var( --default-animed-ui-border-color) */
+    --hover-animed-ui-border-color:#008297;             /*   var(--hover-animed-ui-border-color)    */
+    --main-solid-color:#4CCCE6;                         /*   var(--main-solid-color)                */
+    --hover-solid-color:#3EC1DB;                        /*   var(--hover-solid-color)               */
+    --low-contrast-text:#4CCCE6;                        /*   var(--low-contrast-text)               */
+    --high-contast-text:#B6ECF8;                        /*   var(--high-contast-text)               */
     
     --succes-color:#113B29;                             /*   var(--succes-color)                    */
     --error-color:#EC6142;                              /*   var(--error-color)                     */

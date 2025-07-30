@@ -1,44 +1,78 @@
 <div class="exo5">
-    <div class="soloitem">
-        <h3>Ajout d'un pokemon</h3>
-        <form [formGroup]="pokemon_form" (ngSubmit)="savePokemon()">
+  <div class="soloitem">
+    <h3>Ajout d'un pokemon</h3>
+    <form [formGroup]="pokemon_form" (ngSubmit)="savePokemon()">
+      <div>
+        <label for="name">Pokemon's Name</label>
+        <input type="text" name="name" formControlName="name" />
+        @if (pokemon_form.get('name')?.hasError('required') &&
+        pokemon_form.get('name')?.touched){
+        <p>champ obligatoire</p>
+        }
+      </div>
+      <div>
+        <label for="description">Pokemon's description</label>
+        <input type="text" name="description" formControlName="description" />
+        @if(pokemon_form.hasError("required") && pokemon_form.touched){
+        <p>champ obligatoire</p>
+        }
+      </div>
+      <fieldset formArrayName="type">
+        <legend>Type</legend>
+        @for (control of type.controls; track control; let i = $index){
+        <label [for]="'type' + $index">type {{ $index + 1 }}</label>
+        <input
+          type="text"
+          [name]="'type' + $index"
+          [formControlName]="$index"
+        />
+        @if(pokemon_form.hasError("required") && pokemon_form.touched){
+        <p>champ obligatoire</p>
+        } }
+        <button (click)="addType()">Ajouter un Type</button>
+      </fieldset>
+      <fieldset formGroupName="attaque">
+        <legend>Attaque</legend>
         <div>
-            <label for="name">Pokemon's Name</label>
-            <input type="text" name="name" formControlName="name">
+          <label for="name">Nom de l'attaque</label>
+          <input type="text" name="name" formControlName="name" />
+          @if(pokemon_form.hasError("required") && pokemon_form.touched){
+          <p>champ obligatoire</p>
+          }
         </div>
         <div>
-            <label for="description">Pokemon's description</label>
-            <input type="text" name="description" formControlName="description">
+          <label for="description">Description</label>
+          <input type="text" name="description" formControlName="description" />
+          @if(pokemon_form.hasError("required") && pokemon_form.touched){
+          <p>champ obligatoire</p>
+          }
         </div>
-        <fieldset formArrayName="type">
-            <legend>Type</legend>
-            @for (control of type.controls; track control; let i = $index){
-                <label [for]="'type' + $index">type {{$index + 1}}</label>
-                <input type="text" [name]="'type' + $index" [formControlName]="$index">
-            }
-            <button (click)="addType()">Ajouter un Type</button>
-        </fieldset>
-        <fieldset formGroupName="attaque">
-            <legend>Attaque</legend>
-            <div>
-                <label for="name">Nom de l'attaque</label>
-                <input type="text" name="name" formControlName="name">
-            </div>
-            <div>
-                <label for="description">Description</label>
-                <input type="text" name="description" formControlName="description">
-            </div>
-                        <div>
-                <label for="damage">Description</label>
-                <input type="number" name="damage" formControlName="damage">
-            </div>
-            <div>
-                <label for="type">Type</label>
-                <input type="text" name="type" formControlName="type">
-            </div>
-        </fieldset>
+        <div>
+          <label for="damage">Damage</label>
+          <input type="number" name="damage" formControlName="damage" />
+          @if(pokemon_form.hasError("required") && pokemon_form.touched){
+          <p>champ obligatoire</p>
+          }
+        </div>
+        <div>
+          <label for="type">Type</label>
+          <input type="text" name="type" formControlName="type" />
+          @if(pokemon_form.hasError("required") && pokemon_form.touched){
+          <p>champ obligatoire</p>
+          }
+        </div>
+      </fieldset>
 
-        <button>Sauvegarder</button>
+      <button>Sauvegarder</button>
     </form>
+    <div class="pokedex">
+      <h2>Pokédex:</h2>
+      <div class="pc">
+      @for (pokemon of pokedex; track pokemon; let i = $index){
+      <app-pokemon-card [pokemon]="pokemon" />
+      }
+      </div>
+
     </div>
+  </div>
 </div>

@@ -3,14 +3,14 @@
 
         <h2>Les séries</h2>
         @for(serie of series | ordertable :order ; track series; let i= $index){
-            <li>{{i}}: {{serie}}. <button (click)="deleteMovie(i)">Remove</button></li>
+            <li>{{i}}: {{serie}}. </li>
            
         }@empty {
             <p>la liste est vide</p>
         }
         <div class="doublebottombutton">
-            <button (click)="setOrder('asc')">Alpha</button>
-            <button (click)="setOrder('dsc')">UnAlpha</button>
+            <button (click)="setOrder('asc')">Ordre Alphabétique</button>
+            <button (click)="setOrder('dsc')">Ordre Alphabétique inversé</button>
         </div>
     </div>
 </div>
