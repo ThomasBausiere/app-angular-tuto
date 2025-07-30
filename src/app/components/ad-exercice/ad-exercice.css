@@ -1,4 +1,4 @@
- .exo4{
+ .exo5{
     height: 100vh;
     background: var(--main-bg-color);
     color:var(--main-solid-color);
@@ -6,8 +6,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .soloitem{
-    overflow: scroll;
+    height: fit-content;
+    padding: 10px;
+}
+.exo5 > form, input{
+    width: 100%;
 }

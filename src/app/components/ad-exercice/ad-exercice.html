@@ -1,0 +1,44 @@
+<div class="exo5">
+    <div class="soloitem">
+        <h3>Ajout d'un pokemon</h3>
+        <form [formGroup]="pokemon_form" (ngSubmit)="savePokemon()">
+        <div>
+            <label for="name">Pokemon's Name</label>
+            <input type="text" name="name" formControlName="name">
+        </div>
+        <div>
+            <label for="description">Pokemon's description</label>
+            <input type="text" name="description" formControlName="description">
+        </div>
+        <fieldset formArrayName="type">
+            <legend>Type</legend>
+            @for (control of type.controls; track control; let i = $index){
+                <label [for]="'type' + $index">type {{$index + 1}}</label>
+                <input type="text" [name]="'type' + $index" [formControlName]="$index">
+            }
+            <button (click)="addType()">Ajouter un Type</button>
+        </fieldset>
+        <fieldset formGroupName="attaque">
+            <legend>Attaque</legend>
+            <div>
+                <label for="name">Nom de l'attaque</label>
+                <input type="text" name="name" formControlName="name">
+            </div>
+            <div>
+                <label for="description">Description</label>
+                <input type="text" name="description" formControlName="description">
+            </div>
+                        <div>
+                <label for="damage">Description</label>
+                <input type="number" name="damage" formControlName="damage">
+            </div>
+            <div>
+                <label for="type">Type</label>
+                <input type="text" name="type" formControlName="type">
+            </div>
+        </fieldset>
+
+        <button>Sauvegarder</button>
+    </form>
+    </div>
+</div>

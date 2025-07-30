@@ -28,6 +28,12 @@ export class Library {
     isRead: false
   }
 
+  newBook: Book = {
+    title :"",
+    author:"",
+    isRead: false
+  }
+
   author : string = ""
   title : string = ""
   isSubmitted : boolean = false
@@ -37,7 +43,7 @@ export class Library {
      this.book ={
       author:this.author,
       title :this.title,
-      isRead:false,
+      isRead:false
     }
       this.library.push(this.book); 
       this.author = "";
