@@ -69,7 +69,7 @@
       <h2>Pokédex:</h2>
       <div class="pc">
       @for (pokemon of pokedex; track pokemon; let i = $index){
-      <app-pokemon-card [pokemon]="pokemon" />
+      <app-pokemon-card [pokemon]="pokemon" [pokedex]="pokedex" />
       }
       </div>
 

@@ -1,7 +1,7 @@
 <div class="pc">
 
     <div class="card">
-      <h1>{{ pokemon.name }}</h1>
+      <h4>{{ pokemon.name }}</h4>
     
       <p>{{ pokemon.description }}</p>
       <p>{{ pokemon.type }}</p>
@@ -10,5 +10,6 @@
       <p>{{ pokemon.attaque.description }}</p>
       <p>{{ pokemon.attaque.damage }}</p>
       <p>{{ pokemon.attaque.type }}</p>
+      <button class="buttonclass" (click)="deleteData()">Supprimer </button>
     </div>
 </div>
